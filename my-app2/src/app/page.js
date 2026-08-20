@@ -1,5 +1,4 @@
 
-
 "use client";
 import { useState } from "react";
 
@@ -107,11 +106,19 @@ const Page = () => {
               </button>
             </div>
           ))}
-
-          {filteredTasks.length === 0 && (
-            <p className="text-center text-gray-400 text-sm py-4">No tasks found.</p>
-          )}
         </div>
+        <div className="w-full h-px bg-gray-300 mt-5"></div>
+        <div className="flex justify-between">
+          <div className="text-sm text-gray-500 font-medium">
+            {tasks.filter((t) => t.isCompleted).length} of {tasks.length} tasks completed
+          </div>
+          <p className="text-red-500 hover:text-red-300">Clear completed</p>
+        </div>
+        <p className="gap-4 ">Created by{""}
+          <a className="text-blue-500 hover:underline font-medium gap-3"
+            href="https://github.com/chuluunbatt">Chuluunbat</a>
+        </p>
+
       </div>
     </div>
   );
